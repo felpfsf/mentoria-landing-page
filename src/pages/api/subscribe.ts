@@ -6,7 +6,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const { name, email, whatsapp } = await request.json();
 
-    const CLIKCUP_API_TOKEN = import.meta.env.CLIKCUP_API_TOKEN;
+    const CLICKUP_API_TOKEN = import.meta.env.CLICKUP_API_TOKEN;
     const CLICKUP_LIST_ID = import.meta.env.CLICKUP_LIST_ID;
 
     const response = await fetch(
@@ -14,7 +14,7 @@ export const POST: APIRoute = async ({ request }) => {
       {
         method: "POST",
         headers: {
-          Authorization: `${CLIKCUP_API_TOKEN}`,
+          Authorization: CLICKUP_API_TOKEN,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
