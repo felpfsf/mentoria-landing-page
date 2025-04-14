@@ -1,0 +1,49 @@
+---
+import CtaButton from "./cta_button";
+import MotionSection from "./ui/motion_section";
+---
+
+<MotionSection client:visible>
+  <section class='text-white py-24 px-6'>
+    <div class='max-w-3xl mx-auto text-center'>
+      <h2 class='text-3xl font-bold mb-4'>Quem vai te orientar</h2>
+      <p class='text-zinc-400 mb-10 text-base max-w-xl mx-auto'>
+        Uma mentora que já trilhou o caminho e pode encurtar o seu.
+      </p>
+
+      <div class='relative w-40 h-40 mx-auto mb-8'>
+        <div
+          class='absolute inset-0 bg-purple-500 opacity-30 blur-2xl rounded-full z-0 scale-110'
+        >
+        </div>
+        <img
+          src='https://avatars.githubusercontent.com/u/32311268?v=4'
+          alt='Kamila Santos'
+          class='relative z-10 rounded-full border-4 border-zinc-800 shadow-2xl object-cover w-full h-full'
+        />
+      </div>
+
+      <blockquote class='text-zinc-200 italic text-lg leading-relaxed mb-6'>
+        “Eu acredito que todo programador pode construir uma carreira de impacto
+        — desde que tenha clareza, estratégia e alguém que já tenha passado por
+        isso ao lado.”
+      </blockquote>
+
+      <p class='text-zinc-300 text-base leading-relaxed max-w-xl mx-auto mb-6'>
+        Com mais de
+        <strong class='text-white font-semibold'>8 anos de experiência</strong>
+        em desenvolvimento e mentoria, já ajudei centenas de devs a se posicionarem
+        com autoridade no mercado, conquistarem oportunidades no Brasil e no exterior,
+        e virarem a chave da carreira com confiança.
+      </p>
+
+      <div class='mt-8'>
+        <p class='text-white font-semibold text-lg'>Kamila Santos</p>
+        <p class='text-zinc-400 text-sm'>
+          Mentora de Carreira e Posicionamento para Devs
+        </p>
+      </div>
+      <CtaButton client:load />
+    </div>
+  </section>
+</MotionSection>

@@ -1,0 +1,19 @@
+---
+import VslPlayer from "./ui/video_player";
+
+const videoId = "E9MoALt8-xo";
+---
+
+<section class='py-20 px-6'>
+  <div class='max-w-4xl mx-auto text-center'>
+    <h2 class='text-3xl font-bold mb-4'>
+      Veja como a mentoria pode mudar sua carreira
+    </h2>
+    <p class='text-zinc-400 mb-10 text-base max-w-xl mx-auto'>
+      Assista à aula introdutória e entenda como usar posicionamento e
+      estratégia para dar o próximo passo como dev.
+    </p>
+
+    <VslPlayer videoId={videoId} client:load />
+  </div>
+</section>
