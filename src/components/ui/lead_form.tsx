@@ -27,13 +27,22 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         whatsapp: formData.get("whatsapp"),
       };
 
-      console.log(payload);
-      await new Promise((resolve) => setTimeout(resolve, 1800));
-      // todo: Integrar com mail chimp
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-      form.reset();
-      setSubmitting(false);
-      toast.success("Inscrição realizada com sucesso! 🥳");
+      if (!res.ok) {
+        const error = await res.json();
+        toast.error(`Ocorreu um erro ao enviar o formulário: ${error.error}`);
+      } else {
+        toast.success("Inscrição realizada com sucesso! 🥳");
+        form.reset();
+        setSubmitting(false);
+      }
 
       setTimeout(() => {
         onSuccess?.();
