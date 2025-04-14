@@ -41,8 +41,8 @@ export default function TestimonialsCarousel() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className='bg-zinc-800 text-white hover:bg-purple-600 hover:text-white transition-colors shadow-md h-10 w-10 rounded-full cursor-pointer' />
-            <CarouselNext className='bg-zinc-800 text-white hover:bg-purple-600 hover:text-white transition-colors shadow-md h-10 w-10 rounded-full cursor-pointer' />
+            <CarouselPrevious className='bg-zinc-800 text-white hover:bg-purple-600 hover:text-white transition-colors shadow-md h-10 w-10 rounded-full cursor-pointer hidden lg:flex' />
+            <CarouselNext className='bg-zinc-800 text-white hover:bg-purple-600 hover:text-white transition-colors shadow-md h-10 w-10 rounded-full cursor-pointer hidden lg:flex' />
           </Carousel>
         </div>
       </section>
