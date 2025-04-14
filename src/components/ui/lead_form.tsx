@@ -41,14 +41,12 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
       } else {
         toast.success("Inscrição realizada com sucesso! 🥳");
         form.reset();
-        setSubmitting(false);
       }
 
       setTimeout(() => {
         onSuccess?.();
       }, 1200);
     } catch (error) {
-      setSubmitting(false);
       toast.error("Ops! Ocorreu um erro ao enviar o formulário.");
     } finally {
       setSubmitting(false);
