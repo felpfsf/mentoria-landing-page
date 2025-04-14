@@ -1,16 +1,40 @@
 ---
-import '../styles/global.css';
-const { content } = Astro.props;
+import "../styles/global.css";
+const { title = "Mentoria de Carreira para Devs" } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<!doctype html>
+<html lang='pt-BR' class='text-zinc-100'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta
+      name='description'
+      content='Mentoria de Carreira e Posicionamento de Impacto para Programadores.'
+    />
+    <title>{title}</title>
+
+    <!-- Fontes -->
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'
+      rel='stylesheet'
+    />
+
+    <!-- Favicon -->
+    <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
+  </head>
+
+  <body class='text-zinc-100 font-sans flex flex-col min-h-screen bg-soft-dark'>
+    <main class='relative overflow-x-hiddenflex flex-grow'>
+      <!-- <main class='relative overflow-x-hiddenflex flex-grow px-6 py-24 md:p-12'> -->
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class='text-sm text-zinc-500 text-center py-6'>
+      © {new Date().getFullYear()} Kamila Santos - KamilaCode® — Todos os direitos reservados
+    </footer>
+  </body>
 </html>
