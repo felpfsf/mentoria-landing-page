@@ -63,7 +63,7 @@ const TestimonialItem = ({ testimonial, author }: Testimonial) => {
           loading='lazy'
           onError={(e) => {
             (e.target as HTMLImageElement).src =
-              "https://avatars.githubusercontent.com/u/32311268?v=4"; // default avatar
+              "https://avatars.githubusercontent.com/u/32311268?v=4"; // todo trocar default avatar
           }}
         />
         <p className='text-zinc-300 text-sm'>
