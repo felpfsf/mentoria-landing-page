@@ -1,0 +1,58 @@
+[
+  {
+    "testimonial": "Essa mentoria abriu minha visão sobre carreira!",
+    "author": {
+      "name": "Ana Souza",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+    }
+  },
+  {
+    "testimonial": "Consegui meu primeiro job internacional depois disso.",
+    "author": {
+      "name": "Lucas Ribeiro",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/33.jpg"
+    }
+  },
+  {
+    "testimonial": "Essa mentoria me ajudou a me destacar na minha carreira.",
+    "author": {
+      "name": "Juliana Carvalho",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/12.jpg"
+    }
+  },
+  {
+    "testimonial": "Eu não queria mais estar no trabalho, mas essa mentoria me ajudou a mudar meu posicionamento.",
+    "author": {
+      "name": "Renan Lima",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/55.jpg"
+    }
+  },
+  {
+    "testimonial": "Consegui mostrar meu valor na empresa e fui promovida!",
+    "author": {
+      "name": "Mariana Azevedo",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/47.jpg"
+    }
+  },
+  {
+    "testimonial": "Essa mentoria é como um mapa para quem se sente perdido na carreira.",
+    "author": {
+      "name": "Tiago Nunes",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/29.jpg"
+    }
+  },
+  {
+    "testimonial": "Hoje tenho confiança para me vender como desenvolvedor.",
+    "author": {
+      "name": "Fernanda Rocha",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/91.jpg"
+    }
+  },
+  {
+    "testimonial": "Nunca pensei que posicionamento fosse tão importante. Vale cada segundo!",
+    "author": {
+      "name": "Carlos Martins",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+    }
+  }
+]
