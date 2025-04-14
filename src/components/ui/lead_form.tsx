@@ -37,7 +37,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
       if (!res.ok) {
         const error = await res.json();
-        toast.error(`Ocorreu um erro ao enviar o formulário: ${error.error}`);
+        toast.error(`Ocorreu um erro ao enviar o formulário: ${error.error || "Erro desconhecido"}`);
       } else {
         toast.success("Inscrição realizada com sucesso! 🥳");
         form.reset();
