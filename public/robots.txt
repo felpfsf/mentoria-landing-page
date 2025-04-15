@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mentoria.kamilasantos.dev/sitemap.xml 
