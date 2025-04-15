@@ -37,8 +37,17 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
       if (!res.ok) {
         const error = await res.json();
-        toast.error(`Ocorreu um erro ao enviar o formulário: ${error.error || "Erro desconhecido"}`);
+        toast.error(
+          `Ocorreu um erro ao enviar o formulário: ${
+            error.error || "Erro desconhecido"
+          }`
+        );
       } else {
+        // Facebook Pixel
+        if (typeof window.fbq === "function") {
+          window.fbq("track", "Lead");
+        }
+
         toast.success("Inscrição realizada com sucesso! 🥳");
         form.reset();
       }
