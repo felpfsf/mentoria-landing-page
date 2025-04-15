@@ -1,18 +1,39 @@
 ---
 import "../styles/global.css";
-const { title = "Mentoria de Carreira para Devs" } = Astro.props;
+const {
+  title = "Mentoria de Carreira para Devs | Com Kamila Santos",
+  description = "Mentoria prática para programadores que querem acelerar sua carreira e se destacar com posicionamento e autoridade digital.",
+} = Astro.props;
 ---
 
-<!doctype html>
 <html lang='pt-BR' class='text-zinc-100'>
   <head>
     <meta charset='UTF-8' />
+    <meta name='theme-color' content='#9333ea' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='description' content={description} />
     <meta
-      name='description'
-      content='Mentoria de Carreira e Posicionamento de Impacto para Programadores.'
+      name='keywords'
+      content='mentoria, carreira, dev, programador, mentor, mentoria de carreira, mentoria para devs, mentoria para programadores, mentoria para carreira, mentoria para desenvolvedores, mentoria para devs, mentoria para programadores, carreira para devs, carreira para programadores, dev para mentor, programador para mentor, carreira para mentor, desenvolvedor para mentor, dev para carreira, programador para carreira, dev para carreira, programador para carreira'
     />
+    <meta name='author' content='Kamila Santos' />
     <title>{title}</title>
+
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <!-- TODO: Adicionar URL -->
+    <meta property='og:url' content='https://mentoria.kamilasantos.dev/' />
+    <!-- TODO: Adicionar URL -->
+    <meta property='og:image' content='/public/og-image.png"' />
+
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <!-- todo: adicionar URL -->
+    <meta name='twitter:url' content='ttps://mentoria.kamilasantos.dev/' />
+    <!-- todo: adicionar URL -->
+    <meta name='twitter:image' content='/public/og-image.png' />
 
     <!-- Fontes -->
     <link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -23,18 +44,39 @@ const { title = "Mentoria de Carreira para Devs" } = Astro.props;
     />
 
     <!-- Favicon -->
-    <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
+    <link rel='canonical' href='https://mentoria.kamilasantos.dev/' />
+    <link rel='icon' href='/favicon.ico' type='image/x-icon' />
+    <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+    <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+    <link rel='icon' type='image/png' sizes='48x48' href='/favicon-48x48.png' />
+    <link rel='icon' type='image/png' sizes='64x64' href='/favicon-64x64.png' />
+    <link rel='icon' type='image/png' sizes='96x96' href='/favicon-96x96.png' />
+    <link
+      rel='icon'
+      type='image/png'
+      sizes='128x128'
+      href='/favicon-128x128.png'
+    />
+    <link
+      rel='icon'
+      type='image/png'
+      sizes='256x256'
+      href='/favicon-256x256.png'
+    />
+
+    <link rel='sitemap' href='/sitemap.xml' />
+    <link rel='manifest' href='/manifest.webmanifest' />
   </head>
 
   <body class='text-zinc-100 font-sans flex flex-col min-h-screen bg-soft-dark'>
     <main class='relative overflow-x-hiddenflex flex-grow'>
-      <!-- <main class='relative overflow-x-hiddenflex flex-grow px-6 py-24 md:p-12'> -->
       <slot />
     </main>
 
     <!-- Footer -->
     <footer class='text-sm text-zinc-500 text-center py-6'>
-      © {new Date().getFullYear()} Kamila Santos - KamilaCode® — Todos os direitos reservados
+      © {new Date().getFullYear()} Kamila Santos - KamilaCode® — Todos os direitos
+      reservados
     </footer>
   </body>
 </html>
