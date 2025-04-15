@@ -6,6 +6,12 @@ import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+type ILeadPayload = {
+  name: string;
+  email: string;
+  whatsapp: string;
+};
+
 type LeadFormProps = {
   onSuccess?: () => void;
 };
@@ -15,17 +21,21 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitting(true);
     try {
-      setSubmitting(true);
-
       const form = e.currentTarget;
       const formData = new FormData(form);
 
-      const payload = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        whatsapp: formData.get("whatsapp"),
+      const payload: ILeadPayload = {
+        name: String(formData.get("name")),
+        email: String(formData.get("email")),
+        whatsapp: String(formData.get("whatsapp")),
       };
+
+      if (!payload.name || !payload.email || !payload.whatsapp) {
+        toast.error("Preencha todos os campos!");
+        return;
+      }
 
       const res = await fetch("/api/subscribe", {
         method: "POST",
@@ -37,24 +47,23 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
       if (!res.ok) {
         const error = await res.json();
-        toast.error(
-          `Ocorreu um erro ao enviar o formulário: ${
-            error.error || "Erro desconhecido"
-          }`
-        );
-      } else {
-        // Facebook Pixel
-        if (typeof window.fbq === "function") {
-          window.fbq("track", "Lead");
-        }
-
-        toast.success("Inscrição realizada com sucesso! 🥳");
-        form.reset();
+        const errorMessage =
+          error.error || error.message || "Erro desconhecido";
+        toast.error(`Ocorreu um erro ao enviar o formulário: ${errorMessage}`);
+        return;
       }
+
+      // Facebook Pixel
+      if (typeof window.fbq === "function") {
+        window.fbq("track", "Lead");
+      }
+
+      toast.success("Inscrição realizada com sucesso! 🥳");
+      form.reset();
 
       setTimeout(() => {
         onSuccess?.();
-      }, 1200);
+      }, 800);
     } catch (error) {
       toast.error("Ops! Ocorreu um erro ao enviar o formulário.");
     } finally {
