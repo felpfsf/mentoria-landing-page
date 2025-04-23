@@ -12,7 +12,7 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
 ---
 
 <Layout>
-  <MetaPixel pixelId={pixelId} />
+  <MetaPixel pixelId={pixelId} client:only="react" />
   <Hero />
   <ContentHighlighs />
   <VslSection />

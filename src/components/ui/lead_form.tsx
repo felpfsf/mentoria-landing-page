@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CheckCircle, Loader2 } from "lucide-react";
-import ReactPixel from "react-facebook-pixel";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -56,7 +55,6 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
       }
 
       // Facebook Pixel
-      ReactPixel.track("Lead");
 
       toast.success("Inscrição realizada com sucesso! 🥳");
       form.reset();
