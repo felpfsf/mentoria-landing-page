@@ -5,9 +5,14 @@ import MentoraBio from "@/components/mentora_bio.astro";
 import TestimonialsCarousel from "@/components/testimonials_carousel";
 import VslSection from "@/components/vls_section.astro";
 import Layout from "@/layouts/main.astro";
+import MetaPixel from "../components/MetaPixel";
+
+const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
+
 ---
 
 <Layout>
+  <MetaPixel pixelId={pixelId} />
   <Hero />
   <ContentHighlighs />
   <VslSection />

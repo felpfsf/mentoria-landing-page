@@ -1,12 +1,9 @@
 ---
-import MetaPixel from "@/components/meta_pixel.astro";
 import "../styles/global.css";
 const {
   title = "Mentoria de Carreira para Devs | Com Kamila Santos",
   description = "Mentoria prática para programadores que querem acelerar sua carreira e se destacar com posicionamento e autoridade digital.",
 } = Astro.props;
-
-const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
 ---
 
 <html lang='pt-BR' class='text-zinc-100'>
@@ -70,7 +67,6 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
     <link rel='sitemap' href='/sitemap.xml' />
     <link rel='manifest' href='/manifest.webmanifest' />
 
-    <MetaPixel pixelId={pixelId} />
   </head>
 
   <body class='text-zinc-100 font-sans flex flex-col min-h-screen bg-soft-dark'>
