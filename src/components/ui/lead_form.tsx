@@ -63,7 +63,9 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
       setTimeout(() => {
         onSuccess?.();
+        window.open("https://google.com", "_blank");
       }, 800);
+      
     } catch (error) {
       toast.error("Ops! Ocorreu um erro ao enviar o formulário.");
     } finally {
