@@ -55,6 +55,13 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
       }
 
       // Facebook Pixel
+      if (typeof window !== "undefined" && typeof window.fbq === "function") {
+        window.fbq("track", "Lead", {
+          content_name: "Mentoria de Carreira",
+          value: 0,
+          currency: "BRL",
+        });
+      }
 
       toast.success("Inscrição realizada com sucesso! 🥳");
       form.reset();
